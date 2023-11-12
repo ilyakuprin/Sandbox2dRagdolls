@@ -5,9 +5,6 @@ namespace Sandbox
 {
     public class PickUpItem : MonoBehaviour
     {
-        public event Action PickedUp;
-        public event Action PickedDown;
-
         [SerializeField] private ButtonInteraction _buttonInteraction;
         [SerializeField] private Transform _pointForWeapon;
         [SerializeField] private Transform _overlapForTake;
@@ -16,6 +13,7 @@ namespace Sandbox
         private bool _isWeapon;
         private bool _isInHand;
         private Transform _weapon;
+        private FireWeapon _fireWeapon;
 
         private Transform _startParent;
         private Vector2 _startPosition;
@@ -35,7 +33,7 @@ namespace Sandbox
                                  Vector2.zero,
                                  Quaternion.Euler(Vector2.zero));
 
-                PickedUp?.Invoke();
+                _fireWeapon.SetIsPickUp(true);
             }
             else if (_isInHand)
             {
@@ -45,7 +43,7 @@ namespace Sandbox
                                  new Vector2(_weapon.position.x, _startPosition.y),
                                  _startRotation);
 
-                PickedDown?.Invoke();
+                _fireWeapon.SetIsPickUp(false);
             }
         }
 
@@ -66,7 +64,10 @@ namespace Sandbox
                 _isWeapon = Physics2D.OverlapCircle(overlapCirclePosition, _circleTakeRadius, _weaponLayer);
 
                 if (_isWeapon)
+                {
                     _weapon = Physics2D.OverlapCircle(overlapCirclePosition, _circleTakeRadius, _weaponLayer).transform;
+                    _fireWeapon = _weapon.GetComponent<FireWeapon>();
+                }
             }
         }
 

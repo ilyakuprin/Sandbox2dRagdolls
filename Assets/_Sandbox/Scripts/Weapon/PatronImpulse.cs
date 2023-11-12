@@ -18,6 +18,7 @@ namespace Sandbox
             {
                 transform.position = _firePoint.position;
                 _rigidbody.velocity = transform.TransformDirection(_firePoint.position) * _impulse;
+                _firePoint = null;
             }
         }
 

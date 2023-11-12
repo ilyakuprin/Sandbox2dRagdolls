@@ -420,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 293096564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.27329993, y: -4.41, z: 0}
-  m_LocalScale: {x: 20.529837, y: 1.8793, z: 1}
+  m_LocalScale: {x: 35.413967, y: 1.8793, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 415941933}
@@ -514,7 +514,7 @@ RectTransform:
   m_GameObject: {fileID: 345839007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2387, y: 1.2387, z: 1.2387}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1736270548}
@@ -819,7 +819,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.495283, g: 0.6915618, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -964,7 +964,7 @@ RectTransform:
   m_GameObject: {fileID: 758144077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2387, y: 1.2387, z: 1.2387}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 376532734}
@@ -1143,8 +1143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8508b392dc0a544a1e9ad9c0caa2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joystickHands: {fileID: 758144079}
+  _patronHandler: {fileID: 1491056399}
   _pickUpItem: {fileID: 1491056398}
-  _patron: {fileID: 3383067504520684237, guid: 0a1f3397b79ec3f4c954b73977c86f72, type: 3}
   _firePoint: {fileID: 298234958}
   _intervalBetweenShots: 1
 --- !u!1 &904942988 stripped
@@ -2104,20 +2105,6 @@ MonoBehaviour:
   _targetRotation: -90
   _force: 300
   _rigidbody: {fileID: 936042909}
---- !u!114 &936042915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936042896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a9df25b37925e545919eba8bb395200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 5
-  _health: 5
 --- !u!114 &936042916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2125,6 +2112,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936042899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9df25b37925e545919eba8bb395200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 5
+  _health: 5
+--- !u!114 &936042917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936042896}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a9df25b37925e545919eba8bb395200, type: 3}
@@ -2370,16 +2371,16 @@ RectTransform:
   m_GameObject: {fileID: 1305844731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2387, y: 1.2387, z: 1.2387}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 508310612}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 504.6, y: -393.6}
-  m_SizeDelta: {x: 93.392, y: 93.392}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -510, y: 146.4}
+  m_SizeDelta: {x: 93.39197, y: 93.392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305844733
 MonoBehaviour:
@@ -2933,6 +2934,20 @@ MonoBehaviour:
   _weaponLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &1491056399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491056391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7185b91d2d92f94f861917b10801715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberCreatedPatron: 3
+  _patron: {fileID: 3383067504520684237, guid: 0a1f3397b79ec3f4c954b73977c86f72, type: 3}
 --- !u!1 &1555698642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1014437734161167352, guid: 163f7f7868c390a489bafb3dfcbad66e, type: 3}
@@ -3869,7 +3884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8508b392dc0a544a1e9ad9c0caa2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _joystickHands: {fileID: 758144079}
+  _patronHandler: {fileID: 1491056399}
   _pickUpItem: {fileID: 1491056398}
-  _patron: {fileID: 3383067504520684237, guid: 0a1f3397b79ec3f4c954b73977c86f72, type: 3}
   _firePoint: {fileID: 315984925}
   _intervalBetweenShots: 2

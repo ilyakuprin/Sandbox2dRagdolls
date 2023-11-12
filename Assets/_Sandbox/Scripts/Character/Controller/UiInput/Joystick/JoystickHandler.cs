@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -6,6 +7,8 @@ namespace Sandbox
 {
     public abstract class JoystickHandler : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
     {
+        public event Action<bool> Pressed;
+
         [SerializeField] private RectTransform _joystickArea;
         [SerializeField] private RectTransform _joystickBackground;
         [SerializeField] private Image _joystick;
@@ -54,6 +57,8 @@ namespace Sandbox
             {
                 _joystickBackground.anchoredPosition = new Vector2(joysicBackgroundPosition.x, joysicBackgroundPosition.y);
             }
+
+            Pressed?.Invoke(true);
         }
 
         public void OnPointerUp(PointerEventData eventData)
@@ -64,6 +69,8 @@ namespace Sandbox
 
             _inputVector = Vector2.zero;
             _joystick.rectTransform.anchoredPosition = Vector2.zero;
+
+            Pressed?.Invoke(false);
         }
     }
 }
